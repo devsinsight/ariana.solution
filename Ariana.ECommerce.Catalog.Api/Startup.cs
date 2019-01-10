@@ -1,4 +1,5 @@
 ﻿using Ariana.ECommerce.Catalog.Api.Mappings;
+using Ariana.ECommerce.Catalog.Api.Seed;
 using Ariana.ECommerce.Catalog.Application;
 using Ariana.ECommerce.Catalog.Domain.Repository;
 using Ariana.ECommerce.Catalog.Repository;
@@ -50,7 +51,9 @@ namespace Ariana.ECommerce.Catalog.Api
         {
             if (env.IsDevelopment())
             {
+                CatalogContextSeed.SeedAsync(app).Wait();
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {

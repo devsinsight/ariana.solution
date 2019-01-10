@@ -5,8 +5,9 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>be50b3d3-ad0c-4b20-a1b9-682998d929df</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/values</DockerServiceUrl>
-    <DockerServiceName>ariana.ecommerce.api</DockerServiceName>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DockerServiceName>ariana.ecommerce.catalog.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

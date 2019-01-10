@@ -7,3 +7,5 @@ services:
       context: .
       dockerfile: Ariana.ECommerce.Catalog.Api/Dockerfile
 
+  sql.data:
+    image: mcr.microsoft.com/mssql/server
