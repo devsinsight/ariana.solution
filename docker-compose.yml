@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  ariana.ecommerce.catalog.api:
+    image: ${DOCKER_REGISTRY-}arianaecommercecatalogapi
+    build:
+      context: .
+      dockerfile: Ariana.ECommerce.Catalog.Api/Dockerfile
+
