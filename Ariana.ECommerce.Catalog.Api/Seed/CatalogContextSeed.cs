@@ -1,7 +1,9 @@
 ﻿using Ariana.ECommerce.Catalog.Domain;
 using Ariana.ECommerce.Catalog.Repository;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +13,35 @@ namespace Ariana.ECommerce.Catalog.Api.Seed
 {
     public class CatalogContextSeed
     {
+
         public static async Task SeedAsync(IApplicationBuilder applicationBuilder)
         {
-            var context = (CatalogContext)applicationBuilder
-                .ApplicationServices.GetService(typeof(CatalogContext));
-            using (context)
+            using (var serviceScope = applicationBuilder.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                context.Database.Migrate();
-                if (!context.CatalogBrand.Any())
+                var context = serviceScope.ServiceProvider.GetRequiredService<CatalogContext>();
+
+                using (context)
                 {
-                    context.CatalogBrand.AddRange(
-                        GetPreconfiguredCatalogBrands());
-                    await context.SaveChangesAsync();
-                }
-                if (!context.CatalogType.Any())
-                {
-                    context.CatalogType.AddRange(
-                        GetPreconfiguredCatalogTypes());
-                    await context.SaveChangesAsync();
+
+                    context.Database.EnsureCreated();
+
+                    if (!context.CatalogBrand.Any())
+                    {
+                        context.CatalogBrand.AddRange(
+                            GetPreconfiguredCatalogBrands());
+                        await context.SaveChangesAsync();
+                    }
+                    if (!context.CatalogType.Any())
+                    {
+                        context.CatalogType.AddRange(
+                            GetPreconfiguredCatalogTypes());
+                        await context.SaveChangesAsync();
+                    }
                 }
             }
+
+
+            
         }
 
         static IEnumerable<CatalogBrand> GetPreconfiguredCatalogBrands()

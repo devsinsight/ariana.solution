@@ -7,6 +7,7 @@ namespace Ariana.ECommerce.Catalog.Repository
     {
         public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
         {
+            
         }
 
         public DbSet<CatalogItem> CatalogItem { get; set; }

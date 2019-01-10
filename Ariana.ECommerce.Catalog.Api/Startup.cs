@@ -53,7 +53,7 @@ namespace Ariana.ECommerce.Catalog.Api
             {
                 CatalogContextSeed.SeedAsync(app).Wait();
                 app.UseDeveloperExceptionPage();
-
+                
             }
             else
             {
