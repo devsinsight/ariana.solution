@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{2443
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{A540C319-F4A4-4FD1-B845-3274D9B9BC63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ariana.ECommerce.EventBus", "..\Users\shoutmetal\source\repos\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj", "{8FC29696-B0E6-4AEE-8E19-346DC99F10B0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{7C03D002-F2E8-41FF-AD6B-F53873D6BA9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ariana.ECommerce.EventBus", "Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj", "{A54B4864-A583-40F4-BD2F-440387D5369C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{EB91E71C-5B2A-4AD0-A377-6F217077A840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB91E71C-5B2A-4AD0-A377-6F217077A840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB91E71C-5B2A-4AD0-A377-6F217077A840}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FC29696-B0E6-4AEE-8E19-346DC99F10B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FC29696-B0E6-4AEE-8E19-346DC99F10B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FC29696-B0E6-4AEE-8E19-346DC99F10B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FC29696-B0E6-4AEE-8E19-346DC99F10B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54B4864-A583-40F4-BD2F-440387D5369C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54B4864-A583-40F4-BD2F-440387D5369C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54B4864-A583-40F4-BD2F-440387D5369C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54B4864-A583-40F4-BD2F-440387D5369C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,7 +61,7 @@ Global
 		{80A12557-8EB8-4BBB-833E-C8332D969885} = {2443E36F-0684-4D60-91EC-C5D64753420C}
 		{EB91E71C-5B2A-4AD0-A377-6F217077A840} = {2443E36F-0684-4D60-91EC-C5D64753420C}
 		{2443E36F-0684-4D60-91EC-C5D64753420C} = {7C03D002-F2E8-41FF-AD6B-F53873D6BA9F}
-		{8FC29696-B0E6-4AEE-8E19-346DC99F10B0} = {A540C319-F4A4-4FD1-B845-3274D9B9BC63}
+		{A54B4864-A583-40F4-BD2F-440387D5369C} = {A540C319-F4A4-4FD1-B845-3274D9B9BC63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F141BF80-0FCE-4021-8C3C-0F283134122E}
