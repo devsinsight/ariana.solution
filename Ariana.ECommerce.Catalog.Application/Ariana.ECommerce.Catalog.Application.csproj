@@ -10,6 +10,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ariana.ECommerce.Catalog.Repository\Ariana.ECommerce.Catalog.Repository.csproj" />
+    <ProjectReference Include="..\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IntegrationEventHandler\" />
   </ItemGroup>
 
 </Project>

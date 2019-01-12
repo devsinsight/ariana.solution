@@ -1,5 +1,7 @@
-﻿using Ariana.ECommerce.Catalog.Application.Request;
+﻿using Ariana.ECommerce.Catalog.Application.IntegrationEvents;
+using Ariana.ECommerce.Catalog.Application.Request;
 using Ariana.ECommerce.Catalog.Domain.Repository;
+using Ariana.ECommerce.EventBus.EventBus.Abstractions;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,9 +12,12 @@ namespace Ariana.ECommerce.Catalog.Application.Handler
     {
         private readonly ICatalogRepository _repository;
         private readonly IUnitOfWork _uof;
-        public CreateCatalogItemHandler(ICatalogRepository repository, IUnitOfWork uof) {
+        private readonly IEventBus _eventBus;
+
+        public CreateCatalogItemHandler(ICatalogRepository repository, IUnitOfWork uof, IEventBus eventBus) {
             _repository = repository;
             _uof = uof;
+            _eventBus = eventBus;
         }
 
         protected override async Task Handle(CreateCatalogItemRequest request, CancellationToken cancellationToken)
@@ -21,6 +26,7 @@ namespace Ariana.ECommerce.Catalog.Application.Handler
 
             await _uof.CommitAsync();
 
+            _eventBus.Publish(new DemoIntegrationEvent() { MagicNumber = 777 });
         }
     }
 }

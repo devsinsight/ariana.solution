@@ -1,25 +1,22 @@
-﻿using Ariana.ECommerce.Catalog.Api.Mappings;
-using Ariana.ECommerce.Catalog.Api.Seed;
-using Ariana.ECommerce.Catalog.Application;
-using Ariana.ECommerce.Catalog.Domain.Repository;
-using Ariana.ECommerce.Catalog.Repository;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Ariana.ECommerce.Basket.Api.Demo;
 using Ariana.ECommerce.EventBus.EventBus;
 using Ariana.ECommerce.EventBus.EventBus.Abstractions;
 using Ariana.ECommerce.EventBus.RabbitMQ;
-using AutoMapper;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
-using Swashbuckle.AspNetCore.Swagger;
-using System;
 
-namespace Ariana.ECommerce.Catalog.Api
+namespace Ariana.ECommerce.Basket.Api
 {
     public class Startup
     {
@@ -33,31 +30,30 @@ namespace Ariana.ECommerce.Catalog.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddDbContext<CatalogContext>(options =>
-                options.UseSqlServer(
-                    Configuration["ConnectionString"],
-                    sqlServerOptions => sqlServerOptions.CommandTimeout(30))
-            );
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<ICatalogRepository, CatalogRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            services.Configure<CatalogSettings>(Configuration);
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "Catalog Api", Version = "v1" });
-            });
-
-            Mapper.Initialize(cfg => cfg.AddProfile<CatalogMappingProfile>());
-
-            services.AddAutoMapper();
-            services.AddMediatR(typeof(Init));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             RegisterEventBus(services);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseMvc();
+
+            ConfigureEventBus(app);
         }
 
         private void RegisterEventBus(IServiceCollection services)
@@ -119,33 +115,15 @@ namespace Ariana.ECommerce.Catalog.Api
 
             services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
 
-            //services.AddTransient<ProductPriceChangedIntegrationEventHandler>();
-            //services.AddTransient<OrderStartedIntegrationEventHandler>();
+            services.AddTransient<DemoIntegrationEventHandler>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        private void ConfigureEventBus(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                CatalogContextSeed.SeedAsync(app).Wait();
-                app.UseDeveloperExceptionPage();
-                
-            }
-            else
-            {
-                app.UseHsts();
-            }
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
 
-            app.UseSwagger();
+            eventBus.Subscribe<DemoIntegrationEvent, DemoIntegrationEventHandler>();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Catalog Api v1");
-            });
-
-            app.UseHttpsRedirection();
-            app.UseMvc();
         }
     }
 }
