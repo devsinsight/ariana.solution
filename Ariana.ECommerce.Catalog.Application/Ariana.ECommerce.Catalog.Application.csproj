@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Users\shoutmetal\source\repos\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
     <ProjectReference Include="..\Ariana.ECommerce.Catalog.Repository\Ariana.ECommerce.Catalog.Repository.csproj" />
   </ItemGroup>
 
