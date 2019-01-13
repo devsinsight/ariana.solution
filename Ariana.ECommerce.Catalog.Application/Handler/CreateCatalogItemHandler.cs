@@ -26,7 +26,7 @@ namespace Ariana.ECommerce.Catalog.Application.Handler
 
             await _uof.CommitAsync();
 
-            _eventBus.Publish(new DemoIntegrationEvent() { MagicNumber = 777 });
+            _eventBus.Publish(new ProductCreatedIntegrationEvent(request.CatalogItem.Id, request.CatalogItem.Name, request.CatalogItem.Description, request.CatalogItem.Price));
         }
     }
 }

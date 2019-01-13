@@ -18,8 +18,8 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
     depends_on:
-      - sql.data
-      - rabbitmq
+      - "sql.data"
+      - "rabbitmq"
 
   ariana.ecommerce.basket.api:
     environment:
@@ -37,7 +37,7 @@ services:
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
     depends_on:
-      - rabbitmq
+      - "rabbitmq"
 
   sql.data:
     environment:

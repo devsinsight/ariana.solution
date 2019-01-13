@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ariana.ECommerce.Basket.Api.Demo;
-using Ariana.ECommerce.EventBus.EventBus;
+﻿using Ariana.ECommerce.EventBus.EventBus;
 using Ariana.ECommerce.EventBus.EventBus.Abstractions;
 using Ariana.ECommerce.EventBus.RabbitMQ;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
+using System;
 
 namespace Ariana.ECommerce.Basket.Api
 {
@@ -115,14 +109,14 @@ namespace Ariana.ECommerce.Basket.Api
 
             services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
 
-            services.AddTransient<DemoIntegrationEventHandler>();
+            //services.AddTransient<DemoIntegrationEventHandler>();
         }
 
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
 
-            eventBus.Subscribe<DemoIntegrationEvent, DemoIntegrationEventHandler>();
+            //eventBus.Subscribe<DemoIntegrationEvent, DemoIntegrationEventHandler>();
 
         }
     }
