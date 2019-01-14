@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
+    <ProjectReference Include="..\Ariana.ECommerce.Basket.Application\Ariana.ECommerce.Basket.Application.csproj" />
   </ItemGroup>
 
 </Project>

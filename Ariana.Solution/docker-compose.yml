@@ -5,13 +5,13 @@ services:
     image: ${DOCKER_REGISTRY-}arianaecommercecatalogapi
     build:
       context: .
-      dockerfile: Ariana.ECommerce.Catalog.Api/Dockerfile
+      dockerfile: Services/Catalog/Ariana.ECommerce.Catalog.Api/Dockerfile
 
   ariana.ecommerce.basket.api:
     image: ${DOCKER_REGISTRY-}arianaecommercebasketapi
     build:
       context: .
-      dockerfile: Ariana.ECommerce.Basket.Api/Dockerfile
+      dockerfile: Services/Basket/Ariana.ECommerce.Basket.Api/Dockerfile
 
   sql.data:
     image: mcr.microsoft.com/mssql/server

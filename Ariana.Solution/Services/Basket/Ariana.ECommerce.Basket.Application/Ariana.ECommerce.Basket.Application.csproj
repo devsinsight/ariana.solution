@@ -9,4 +9,8 @@
     <Folder Include="IntegrationEventHandler\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
+  </ItemGroup>
+
 </Project>

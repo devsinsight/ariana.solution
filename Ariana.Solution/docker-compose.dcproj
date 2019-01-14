@@ -7,7 +7,7 @@
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
   </PropertyGroup>
   <PropertyGroup>
-    <DockerServiceName>ariana.ecommerce.catalog.api</DockerServiceName>
+    <DockerServiceName>ariana.ecommerce.basket.api</DockerServiceName>
     <DockerServiceUrl>${Scheme}://${ServiceHost}:${ServicePort}/swagger/index.html</DockerServiceUrl>
   </PropertyGroup>
   <ItemGroup>
