@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\BuildingBlocks\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\Ariana.ECommerce.EventBus\Ariana.ECommerce.EventBus.csproj" />
     <ProjectReference Include="..\Ariana.ECommerce.Catalog.Repository\Ariana.ECommerce.Catalog.Repository.csproj" />
   </ItemGroup>
 
