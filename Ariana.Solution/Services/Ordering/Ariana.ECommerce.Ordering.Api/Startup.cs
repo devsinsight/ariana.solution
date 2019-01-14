@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace Ariana.ECommerce.Order.Api
+namespace Ariana.ECommerce.Ordering.Api
 {
     public class Startup
     {

@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:50710",
-      "sslPort": 44397
+      "applicationUrl": "http://localhost:54529",
+      "sslPort": 44314
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Ariana.ECommerce.Order.Api": {
+    "Ariana.ECommerce.Ordering.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

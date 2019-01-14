@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Ariana.ECommerce.Order.Api
+namespace Ariana.ECommerce.Ordering.Api
 {
     public class Program
     {

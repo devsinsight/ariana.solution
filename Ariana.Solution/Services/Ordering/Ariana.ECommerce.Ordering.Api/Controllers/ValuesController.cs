@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Ariana.ECommerce.Order.Api.Controllers
+namespace Ariana.ECommerce.Ordering.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
