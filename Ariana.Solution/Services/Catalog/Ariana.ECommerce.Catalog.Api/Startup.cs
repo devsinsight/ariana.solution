@@ -57,7 +57,7 @@ namespace Ariana.ECommerce.Catalog.Api
 
             RegisterEventBus(services);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         private void RegisterEventBus(IServiceCollection services)

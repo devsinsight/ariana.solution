@@ -1,4 +1,6 @@
-﻿using Ariana.ECommerce.EventBus.EventBus;
+﻿using Ariana.ECommerce.Basket.Application.IntegrationEventHandler;
+using Ariana.ECommerce.Basket.Application.IntegrationEvents;
+using Ariana.ECommerce.EventBus.EventBus;
 using Ariana.ECommerce.EventBus.EventBus.Abstractions;
 using Ariana.ECommerce.EventBus.RabbitMQ;
 using Microsoft.AspNetCore.Builder;
@@ -24,7 +26,7 @@ namespace Ariana.ECommerce.Basket.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             RegisterEventBus(services);
 
@@ -108,14 +110,14 @@ namespace Ariana.ECommerce.Basket.Api
 
             services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
 
-            //services.AddTransient<DemoIntegrationEventHandler>();
+            services.AddTransient<ProductCreatedIntegrationEventHandler>();
         }
 
         private void ConfigureEventBus(IApplicationBuilder app)
         {
             var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
 
-            //eventBus.Subscribe<DemoIntegrationEvent, DemoIntegrationEventHandler>();
+            eventBus.Subscribe<ProductCreatedIntegrationEvent, ProductCreatedIntegrationEventHandler>();
 
         }
     }

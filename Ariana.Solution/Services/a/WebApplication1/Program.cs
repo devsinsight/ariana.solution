@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Ariana.ECommerce.Ordering.Api
+namespace WebApplication1
 {
     public class Program
     {
@@ -19,10 +19,6 @@ namespace Ariana.ECommerce.Ordering.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .ConfigureKestrel((context, options) =>
-                {
-                    // Set properties and call methods on options
-                });
+                .UseStartup<Startup>();
     }
 }
