@@ -59,9 +59,9 @@ namespace Ariana.ECommerce.Catalog.Api
 
             RegisterEventBus(services);
 
-            services.AddSingleton<Background.IHostedService, DemoBackgroundService>();
+            //services.AddSingleton<Background.IHostedService, DemoBackgroundService>();
 
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         private void RegisterEventBus(IServiceCollection services)
