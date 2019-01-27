@@ -1,6 +1,7 @@
 ﻿using Ariana.ECommerce.Catalog.Api.Mappings;
 using Ariana.ECommerce.Catalog.Api.Seed;
 using Ariana.ECommerce.Catalog.Application;
+using Ariana.ECommerce.Catalog.Application.BackgroundServices;
 using Ariana.ECommerce.Catalog.Domain.Repository;
 using Ariana.ECommerce.Catalog.Repository;
 using Ariana.ECommerce.EventBus.EventBus;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Background = Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using Swashbuckle.AspNetCore.Swagger;
@@ -57,7 +59,9 @@ namespace Ariana.ECommerce.Catalog.Api
 
             RegisterEventBus(services);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<Background.IHostedService, DemoBackgroundService>();
+
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         private void RegisterEventBus(IServiceCollection services)

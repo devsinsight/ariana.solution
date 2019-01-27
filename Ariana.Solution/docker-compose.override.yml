@@ -19,7 +19,7 @@ services:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
     restart: on-failure
     depends_on:
-      - sql.data
+      - catalog.database
       - rabbitmq
 
   ariana.ecommerce.basket.api:
@@ -41,7 +41,31 @@ services:
     depends_on:
       - rabbitmq
 
-  sql.data:
+  ariana.ecommerce.ordering.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44303
+    ports:
+      - "57010:80"
+      - "44303:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  ariana.ecommerce.payment.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44312
+    ports:
+      - "50737:80"
+      - "44312:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+  catalog.database:
     environment:
       - SA_PASSWORD=Pass@w0rd1
       - ACCEPT_EULA=Y

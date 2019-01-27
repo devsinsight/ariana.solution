@@ -13,12 +13,22 @@ services:
       context: .
       dockerfile: Services/Basket/Ariana.ECommerce.Basket.Api/Dockerfile
 
-  sql.data:
+  ariana.ecommerce.ordering.api:
+    image: ${DOCKER_REGISTRY-}arianaecommerceorderingapi
+    build:
+      context: .
+      dockerfile: Services/Ordering/Ariana.ECommerce.Ordering.Api/Dockerfile
+
+
+  ariana.ecommerce.payment.api:
+    image: ${DOCKER_REGISTRY-}arianaecommercepaymentapi
+    build:
+      context: .
+      dockerfile: Services/Payment/Ariana.ECommerce.Payment.Api/Dockerfile
+
+  catalog.database:
     image: mcr.microsoft.com/mssql/server
 
   rabbitmq:
     image: rabbitmq:management
     hostname: ariana-ecommerce-queue
-
- 
-
