@@ -1,0 +1,7 @@
+<button (click)="login()" [hidden]="user">Login</button>
+<button (click)="logout()" [hidden]="!user">Logout</button>
+
+<div [hidden]="!user">Welcome {{user?.profile.sub}}</div>
+
+<hr />
+<router-outlet></router-outlet>

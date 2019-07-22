@@ -1,0 +1,14 @@
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.csprojAssemblyReference.cache
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.csproj.CoreCompileInputs.cache
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.RazorAssemblyInfo.cache
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.RazorAssemblyInfo.cs
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.AssemblyInfoInputs.cache
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.AssemblyInfo.cs
+C:\Solutions\PoC\angular.oidc\resource1\bin\Debug\netcoreapp2.2\resource1.deps.json
+C:\Solutions\PoC\angular.oidc\resource1\bin\Debug\netcoreapp2.2\resource1.runtimeconfig.json
+C:\Solutions\PoC\angular.oidc\resource1\bin\Debug\netcoreapp2.2\resource1.runtimeconfig.dev.json
+C:\Solutions\PoC\angular.oidc\resource1\bin\Debug\netcoreapp2.2\resource1.dll
+C:\Solutions\PoC\angular.oidc\resource1\bin\Debug\netcoreapp2.2\resource1.pdb
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.RazorTargetAssemblyInfo.cache
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.dll
+C:\Solutions\PoC\angular.oidc\resource1\obj\Debug\netcoreapp2.2\resource1.pdb

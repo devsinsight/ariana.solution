@@ -1,0 +1,11 @@
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.csprojAssemblyReference.cache
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.csproj.CoreCompileInputs.cache
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.AssemblyInfoInputs.cache
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.AssemblyInfo.cs
+C:\Solutions\PoC\angular.oidc\client1\bin\Debug\netcoreapp2.2\client1.deps.json
+C:\Solutions\PoC\angular.oidc\client1\bin\Debug\netcoreapp2.2\client1.runtimeconfig.json
+C:\Solutions\PoC\angular.oidc\client1\bin\Debug\netcoreapp2.2\client1.runtimeconfig.dev.json
+C:\Solutions\PoC\angular.oidc\client1\bin\Debug\netcoreapp2.2\client1.dll
+C:\Solutions\PoC\angular.oidc\client1\bin\Debug\netcoreapp2.2\client1.pdb
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.dll
+C:\Solutions\PoC\angular.oidc\client1\obj\Debug\netcoreapp2.2\client1.pdb

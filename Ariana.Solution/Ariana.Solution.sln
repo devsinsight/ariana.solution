@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ariana.ECommerce.EventBus",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ariana.ECommerce.Ordering.Api", "Services\Ordering\Ariana.ECommerce.Ordering.Api\Ariana.ECommerce.Ordering.Api.csproj", "{A1DD0360-96A8-4355-96C3-0761EAE9F644}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{B6570545-B283-471D-A7E8-A6F440DCC6BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
